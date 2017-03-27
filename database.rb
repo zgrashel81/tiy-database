@@ -1,54 +1,5 @@
-def opening
-  puts "(a)add a person, (s)search for a person or (d)delete a person"
-  initial = gets.chomp
-end
-def main
-  initial = ()
-  while initial != ""
-    initial = opening
-    if initial == "a"
-      add_person
-    elsif initial == "s"
-      search_person
-    elsif initial == "d"
-      delete_person
-
-    else "I did not get that. "
-    end
-    end
-  end
-  if
-#employee == []
-  def add_person
-      puts "What is the name of the person? "
-      name = gets.chomp
-
-      puts "What is the phone number of the person? "
-      phone_number = gets.chomp
-
-      puts "What is the address of the person? "
-      address = gets.chomp
-
-      puts "What is the persons position? "
-      position = gets.chomp
-
-      puts "What is the persons salary? "
-      salary = gets.chomp
-
-      puts "What is the persons slack account? "
-      slack_account = gets.chomp
-
-      puts "What is the persons github account? "
-      github_account = gets.chomp
-
-      new_person = EmployeeDatabase.new(name, phone_number, address, position, salary, slack_account, slack_account)
-
-      #employee << new_person
-end
-
-
 class EmployeeDatabase
-  attr_reader "name", "phone_number", "address", "position", "salary", "slack_account", "github_account"
+  attr_reader :name, :phone_number, :address, :position, :salary, :slack_account, :github_account
 
   def initialize(name, phone_number, address,position,salary,slack_account,github_account)
     @name = name
@@ -59,6 +10,45 @@ class EmployeeDatabase
     @slack_account = slack_account
     @github_account = github_account
   end
+end
+  directory = []
+  def add_person
+    puts "Name of person: "
+    name = gets.chomp
 
-end
-end
+    puts "Phone number of person: "
+    phone_number = gets.chomp
+
+    puts "Address of person: "
+    address = gets.chomp
+
+    puts "Position of person: "
+    position = gets.chomp
+
+    puts "Salary of person: "
+    salary = gets.chomp
+
+    puts "Slack account of person: "
+    slack_account = gets.chomp
+
+    puts "Github account of person: "
+    github_account = gets.chomp
+
+    new_person = Array.new(:new, :phone_number, :address, :position, :salary, :slack_account, :github_account )
+    directory << new_person
+  end
+
+  user_input = []
+  while user_input != ""
+    puts "(a)add a person, (s)search for a person or (d)delete a person"
+    user_input = gets.chomp
+    if user_input == "a"
+      add_person
+    elsif user_input == "s"
+      search_person
+    elsif user_input == "d"
+      delete_person
+    else
+      puts "That was not an option!"
+    end
+  end
