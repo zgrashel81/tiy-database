@@ -27,7 +27,7 @@ class EmployeeDatabase
     name = gets.chomp
 
     if name.empty?
-      break
+      puts "Name can not be black! "
     end
 
     puts "What is the phone_number?"
